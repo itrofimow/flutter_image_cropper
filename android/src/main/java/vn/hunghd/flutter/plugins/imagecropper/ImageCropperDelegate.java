@@ -48,6 +48,12 @@ public class ImageCropperDelegate implements PluginRegistry.ActivityResultListen
         Uri destinationUri = Uri.fromFile(outputFile);
         UCrop.Options options = new UCrop.Options();
         options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
+
+        options.setAllowedGestures(1, 0, 0);
+        options.setHideBottomControls(true);
+        options.setCropGridRowCount(0);
+        options.setCropGridColumnCount(0);
+
         if (circleShape) {
             options.setCircleDimmedLayer(true);
         }
